@@ -1,14 +1,6 @@
 class Solution {
 public:
     int fib(int n) {
-        int a = 0, b = 1, s = 1;
-        if(n == 0)
-            return 0;
-        for(int i = 2; i<=n; ++i){
-            s = a + b;
-            a = b;
-            b = s;
-        }
-        return s;
+        return round((pow(1.618033988749895, n) - pow(-0.6180339887498949, n)) / 2.23606797749979);
     }
 };
