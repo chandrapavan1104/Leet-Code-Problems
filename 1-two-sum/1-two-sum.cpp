@@ -7,6 +7,7 @@ public:
             if(temp.find(target - nums[i]) != temp.end()){
                 ans.push_back(temp[target - nums[i]]);
                 ans.push_back(i);
+                break;
             }
             else
                 temp.insert({nums[i], i});
