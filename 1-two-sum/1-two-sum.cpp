@@ -10,7 +10,7 @@ public:
                 break;
             }
             else
-                temp[nums[i]] = i;
+                temp.insert({nums[i], i});
         }
         return ans;
     }
