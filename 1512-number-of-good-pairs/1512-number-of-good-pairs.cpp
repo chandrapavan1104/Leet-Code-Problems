@@ -2,12 +2,19 @@ class Solution {
 public:
     int numIdenticalPairs(vector<int>& nums) {
         int a[101] ={0}, s=0;
+        unordered_map<int,int> count;
         for(int i=0; i<nums.size(); i++){
-            a[nums[i]]++;
+            if(count.find(nums[i]) != count.end())
+                count[nums[i]]++;
+            else
+                count.insert({nums[i], 1});
         }
-        for(int i=0; i<101; i++){
-            if(a[i] != 0)
-                s+=a[i]*(a[i]-1)/2;
+        
+        for(auto x: count)
+            cout<<x.first<<" "<<x.second<<endl;
+        
+        for(auto x: count){
+            s += x.second*(x.second-1)/2;
         }
         return s;
     }
